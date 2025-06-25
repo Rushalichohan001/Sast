@@ -1,5 +1,4 @@
 # vulnerable_login.py
-
 import sqlite3
 from flask import Flask, request
 
@@ -12,7 +11,7 @@ def login():
     username = request.form['username']
     password = request.form['password']
 
-    # 🚨 SQL Injection Vulnerability (Unsafe Query)
+    #  SQL Injection Vulnerability (Unsafe-Query)
     query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
     cursor.execute(query)
     result = cursor.fetchone()
